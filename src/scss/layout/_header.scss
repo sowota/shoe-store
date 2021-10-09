@@ -1,0 +1,133 @@
+@use "../abstract/index" as *;
+@use "../base/index" as *;
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: $white;
+    width: 100%;
+    height: 7rem;
+    border-bottom: .1rem solid rgba(0,0,0, .1);
+    box-shadow: 0 1px 3px rgba(0,0,0, .1) ;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: .3s linear;
+    &.scroll {
+        transform: translateY(-1 * 7rem);
+    }
+
+    &__logo{
+        font-size: 2.5rem;
+        color: $black;
+    }
+    &__hamburger{
+        font-size: 2.5rem;
+        padding: .5rem 1.5rem;
+        border: .1rem solid $black;
+        color: $black;
+        border-radius: .3rem;
+        cursor: pointer;
+    }
+}
+
+.nav{
+    &__menu{
+        display: flex;
+        column-gap: 2rem;
+        //justify-content: space-between;
+        align-items: center;
+        
+    }
+    &__link{
+        font-size: 1.7rem;
+        color: $black;
+        text-transform: uppercase;
+        font-weight: $ft-weight-7;
+        
+
+    }
+
+    &__item{
+        padding: 1rem;
+        transition: .3s linear;
+        &:hover{
+            background-color: $orange;
+            
+        }
+
+        &:hover .nav__link{
+            color: $white;
+        }
+    }
+
+    &__icon{
+        display: flex;
+        column-gap: 1.5rem;
+        .fas{
+            font-size: 2.5rem;
+            color: $black; 
+            &:hover{
+                color: $orange;
+            } 
+        }
+    }
+}
+
+@media(max-width:620px){
+    .nav{
+        &__menu{
+            position: absolute;
+            top: 100%;
+            right: -100%;
+            width: 100%;
+            z-index: -1;
+            display: flex;
+            flex-direction: column;
+            background-color: $light-gray;
+            border-top: .1rem solid rgba(0,0,0, .1);
+            transition:  all .4s linear;
+            padding: 5rem;
+            &.open {
+                right: 0;
+            }
+            &.open .nav__item{
+                transform: translateX(0);
+            }
+
+        }
+        &__item{
+            font-size: 2rem;
+            background-color: $white;
+            border: .1rem solid $black;
+            border-radius: .5rem;
+            padding: 1.5rem;
+            margin: 1.5rem;
+            align-self: stretch;
+            text-align: center;
+            transform: translateX(100%);
+            &:first-child{
+                transition: transform .4s linear .2s;
+            }
+            &:nth-child(2){
+                transition: transform .4s linear .3s;
+            }
+            &:nth-child(3){
+                transition: transform .4s linear .4s;
+            }
+            &:last-child{
+                transition: transform .4s linear .5s;
+            }
+        }
+    }
+}
+
+@media(min-width:619px){
+    .header{
+        &__hamburger{
+            display: none;
+        }
+    }
+}

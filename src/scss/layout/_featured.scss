@@ -1,0 +1,92 @@
+@use "../abstract/index" as *;
+
+
+.featured{
+    &__wrapper{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+        grid-gap: 3rem;
+        margin-top: 10vh;
+    }
+    &__card{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        // display: flex;
+        // flex-wrap: wrap;
+        gap: 1.5rem;
+        border: .1rem solid rgba(0,0,0, .1);
+        border-radius: .5rem;
+        background: $card-bg;
+        padding: 2rem;
+        align-items: center;
+    }
+    &__imgs{
+        display: flex;
+        gap: 1.5rem;
+        align-items: center;
+        flex: 1 1 50rem;
+    }
+
+    &__small{
+        width: 20%;
+    }
+
+    &__big{
+        width: 80%;
+    }
+
+    img{
+        width: 100%;
+    }
+
+    &__small-img{
+        padding: 1rem;
+        border: .1rem solid rgba(0,0,0, .3);
+        cursor: pointer;
+        &:hover{
+            background: #ccc;
+        }
+    }
+
+    &__big-img{
+        &:hover{
+            transform: scale(1.05);
+        }
+    }
+
+    &__details{
+        grid-template-columns: repeat(4, 1fr);
+    }
+    &__name{
+        grid-column: 1/5;
+    }
+    &__stars{
+        grid-column: 1/4;
+    }
+    &__p{
+        font-size: 1.5rem;
+        color: #999;
+        padding: 1rem 0;
+        grid-column: 1/5;
+    }
+    &__price{
+        grid-column: 1/5;
+    }
+
+    .fa-star{
+        font-size: 1.7rem;
+        color: $orange;
+        padding: .5rem 0;
+    }
+
+    &__btn{
+    }
+}
+
+@media(min-width:375px){
+    .featured{
+        &__price{
+           grid-column: 1/4;
+        }
+    }
+}

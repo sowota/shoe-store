@@ -1,0 +1,49 @@
+@use "../abstract/index" as *;
+
+.footer{
+    &__wrapper{
+        border: .1rem solid rgba(0,0,0, .1);
+        border-radius: .5rem;
+        background: $card-bg;
+        padding: 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+    }
+    &__nav{
+        flex: 1 1 20rem;
+    }
+    &__h3{
+        color: $black;
+        font-size: 2.5rem;
+        padding-bottom: 1.5rem;
+    }
+
+    &__link{
+        color: $middle-gray;
+        font-size: 1.5rem;
+        padding-bottom:1.5rem;
+        display: block;
+    }
+    &__link-social{
+        color: $middle-gray;
+        font-size: 1.8rem;
+        margin-right: 1rem;
+        .fab{
+            transition: .3s linear;
+        }
+        &:hover .fab{
+            color: $orange;
+            transform: scale(1.4);
+        }
+    }
+    &__credit{
+        width: 100%;
+        font-size: 1.5rem;
+        color: $middle-gray;
+        border-top: .1rem solid rgba(0,0,0, .1);
+        padding-top: 2rem;
+        text-align: center;
+
+    }
+}

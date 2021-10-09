@@ -1,0 +1,75 @@
+@use "../abstract/index" as *;
+
+.btn{
+    font-size: 1.7rem;
+    font-weight: bolder;
+    color: $black;
+    display: inline-block;
+    border: .2rem solid $black;
+    border-radius: .5rem;
+    cursor: pointer;
+    background-color: $white;
+    padding: .4em 2em;
+
+    &:hover{
+        background-color: $orange;
+        color: $white;
+    }
+
+}
+
+.cool-btn{
+    font-size: 1.7rem;
+    font-weight: bolder;
+    display: inline-block;
+    cursor: pointer;
+    color: $black; 
+    padding: .5em 2em .45em;
+    box-shadow: 
+    0.3em 0.3em 0 0 $black,
+    inset 0.3em 0.3em 0 0 $black;
+    transition: .25s;
+        &:hover,
+        &:focus { 
+            box-shadow: 
+            0 0 0 0 $orange ,
+            inset 6em 3.5em 0 0 $orange ;
+            color: $white;
+  }
+  
+
+}
+
+//swiper btn
+
+.swiper-button-next,
+.swiper-button-prev{
+   top: 24%;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::before,
+.swiper-button-prev:after{
+    display: none;
+}
+
+.swiper-button-disabled::after,
+.swiper-button-disabled::before{
+ display: none;
+}
+
+.swiper-button-next,
+.swiper-button-prev{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-button-prev{
+    left: unset;
+    right: calc(10% + 68px);
+}
+
+.swiper-button-next{
+    right: 9%;
+}

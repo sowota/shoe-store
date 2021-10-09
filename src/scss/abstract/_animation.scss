@@ -1,0 +1,19 @@
+@keyframes shoe {
+    0%{
+        transform: rotate(9deg) scale(.5);
+    }
+}
+
+@keyframes text {
+    0%{
+        opacity: 0;
+        top: -10rem;
+    }
+}
+
+@keyframes slide_content{
+    0%{
+        opacity: 0;
+        transform: translateX(-10rem);
+    }
+}

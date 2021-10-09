@@ -1,0 +1,136 @@
+@use "../abstract/index" as *;
+
+.category{
+    &__wrapper{
+        display: flex;
+        max-width: 889px;
+        margin: 0 auto;
+    }
+
+    &__card{
+        cursor: pointer;
+        //flex: 2;
+        width: 10%;
+        height: 80vh;
+        margin-right: 1rem;
+        transition: flex .4s linear;
+        position: relative;
+        transition: .4s linear;
+        overflow: hidden;
+        &.expand{
+            width: 60%;
+        }
+
+        &.expand img{
+            filter: brightness(1);
+        }
+        &.expand .category__h4{
+            transform: rotate(0deg);
+            left: 10px;
+            bottom: 60px;
+            color: $black;
+        }
+    }
+    &__img{
+        width: 100%;
+        height: 100%;
+        border-radius: .5rem;
+        filter: brightness(.4);
+        object-fit: cover;
+       
+    }
+
+    &__h4{
+        position: relative;
+        font-size: 4.5rem;
+        color: $white;
+        bottom: 75px;
+        left:0;
+        transform: rotate(-90deg);
+        transition: .4s linear;
+        @media(max-width:734px){
+            font-size: 4rem;
+        }
+        @media(max-width:426px){
+            font-size: 3rem;
+            bottom: 60px;
+        }
+       
+    }
+}
+
+@media(max-width:411px){
+    .category{
+        &__wrapper{
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+        &__card{
+            flex: 1 1 35vw;
+            height: 45vh;
+            margin-right: 0;
+            
+            object-fit: contain;
+            object-position: bottom;
+            &.expand{
+                width: 50%;
+            }
+            &.expand .category__h4{
+                color: transparent;
+                transform: translateX(100%);
+                
+        }
+        }
+        &__h4{
+            left: 10%;
+            transform: rotate(0deg);
+            font-size: 3rem;
+           
+        }
+    
+    }
+}
+
+@media(max-width:376px){
+    .category{
+        
+
+        &__card{
+            &.expand .category__h4{
+                bottom: 50px;
+                
+            }
+            &.expand{
+                width: 75%;
+            }
+        }
+    }
+   
+}
+
+@media(min-width:855px){
+    .category{
+        &__card{
+            height: 85vh;
+            width: 15%;
+
+            &.expand{
+                width: 50%;
+            }
+    
+            &.expand img{
+                filter: brightness(1);
+            }
+            &.expand .category__h4{
+                transform: rotate(0deg);
+                left: 10px;
+                bottom: 60px;
+                color: $black;
+            }
+        }
+        &__h4{
+            bottom: 95px;
+            font-size: 3.8rem;
+        }
+    }
+}

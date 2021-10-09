@@ -1,0 +1,116 @@
+@use "../abstract/index" as *;
+
+.newsletter{
+    &__wrapper{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+        
+    }
+
+    &__adv{
+        background-color: $black;
+        color: $white;
+        flex: 1 1 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 6em 5em;
+    }
+
+    &__heading{
+        font-size: 4rem;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+    }
+
+    &__p{
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+
+    &__img{
+        flex: 1 1 50%;
+        height: 100%;
+        position: relative;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(.6);
+        }
+    }
+
+    &__form{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        width: 67%;
+        margin: 0 auto;
+        
+
+        input{
+            padding: 1rem;
+            border: .2rem solid $black;
+            color: $black;
+        }
+
+        button{
+            margin-top: 1rem;
+            text-transform: uppercase;
+            padding: 1rem;
+            align-self: center;
+            font-size: 1.3rem;
+            @media(min-width: 768px){
+                font-size: 1.5rem;
+            }
+        }
+
+        .fa-paper-plane{
+            display: none;
+        }
+
+
+    }
+}
+
+@media(min-width:950px){
+    .newsletter{
+        &__form{
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            &:hover input{
+                width: 100%;
+                padding: 1.25rem;
+                border: .2rem;
+            }
+
+            button{
+                margin-top:0;
+                border-radius: unset;
+            }
+
+            input{
+                width: 0px;
+                padding: 0px;
+                border: unset;
+                transition: .4s linear;
+            }
+
+            .fa-paper-plane{
+                display: inline-block;
+                background-color: $white;
+                text-align: center;
+                vertical-align: middle;
+                font-size: 1.85rem;
+                border: .2rem solid $black;
+                padding: 1rem;
+                color: $black;
+            }
+        }
+    }
+}
